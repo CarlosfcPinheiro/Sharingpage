@@ -113,7 +113,7 @@ main{
                 }
                 h2:hover{
                     text-decoration: underline;
-                    cursor: default;
+                    cursor: pointer;
                 }
             }
             p{
@@ -162,11 +162,67 @@ main{
             }
         }
     }
-    .rect-link:hover{
-        background-color: $gray-color;
+    @mixin hover-rect($par_border_color){
         cursor: pointer;
         scale: 1.1;
-        color: $white-color;
+        background-color: $gray-color;
+        border-color: $par_border_color;
+        color: $par_border_color;
+    }
+    #linkedin:hover{
+        @include hover-rect(#448bb4);
+    }
+    #github:hover{
+        @include hover-rect(#694de2);
+    }
+    #cv:hover{
+        @include hover-rect(#e3e65d);
+    }
+}
+
+.content{
+    .circles{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        gap: 0.8rem;
+        @mixin circle-dot($color){
+            width: 1rem;
+            height: 1rem;
+            position: relative;
+
+            border: none;
+            border-radius: 50%;
+            background-color: $color;
+        }
+        #red{
+            @include circle-dot(#da4d4d);
+            animation: moveDot 1s infinite;
+            animation-delay: 300ms;
+        }
+        #yellow{
+            @include circle-dot(#e3e65d);
+            animation: moveDot 1s infinite;
+            animation-delay: 150ms;
+        }
+        #green{
+            @include circle-dot(#5fe65f);
+            animation: moveDot 1s infinite;
+            animation-delay: 0ms;
+        }
+
+        @keyframes moveDot{
+            0%{
+                bottom: 0rem;
+            }
+            50%{
+                bottom: 0.5rem;
+            }
+            100%{
+                bottom: 0rem;
+            }
+
+        }
     }
 }
 

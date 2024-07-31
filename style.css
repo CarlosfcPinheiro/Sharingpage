@@ -99,7 +99,7 @@ main .content .info-content .username h2 {
 }
 main .content .info-content .username h2:hover {
   text-decoration: underline;
-  cursor: default;
+  cursor: pointer;
 }
 main .content .info-content p {
   color: #bbbbbb;
@@ -133,11 +133,74 @@ main .content .info-content p {
 .content .rect-link .container-info h3 i {
   font-size: 22px;
 }
-.content .rect-link:hover {
-  background-color: #1a1a1a;
+.content #linkedin:hover {
   cursor: pointer;
   scale: 1.1;
-  color: #f3f3f3;
+  background-color: #1a1a1a;
+  border-color: #448bb4;
+  color: #448bb4;
+}
+.content #github:hover {
+  cursor: pointer;
+  scale: 1.1;
+  background-color: #1a1a1a;
+  border-color: #694de2;
+  color: #694de2;
+}
+.content #cv:hover {
+  cursor: pointer;
+  scale: 1.1;
+  background-color: #1a1a1a;
+  border-color: #e3e65d;
+  color: #e3e65d;
+}
+
+.content .circles {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 0.8rem;
+}
+.content .circles #red {
+  width: 1rem;
+  height: 1rem;
+  position: relative;
+  border: none;
+  border-radius: 50%;
+  background-color: #da4d4d;
+  animation: moveDot 1s infinite;
+  animation-delay: 300ms;
+}
+.content .circles #yellow {
+  width: 1rem;
+  height: 1rem;
+  position: relative;
+  border: none;
+  border-radius: 50%;
+  background-color: #e3e65d;
+  animation: moveDot 1s infinite;
+  animation-delay: 150ms;
+}
+.content .circles #green {
+  width: 1rem;
+  height: 1rem;
+  position: relative;
+  border: none;
+  border-radius: 50%;
+  background-color: #5fe65f;
+  animation: moveDot 1s infinite;
+  animation-delay: 0ms;
+}
+@keyframes moveDot {
+  0% {
+    bottom: 0rem;
+  }
+  50% {
+    bottom: 0.5rem;
+  }
+  100% {
+    bottom: 0rem;
+  }
 }
 
 .user-photo img {
