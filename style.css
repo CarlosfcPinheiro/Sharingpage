@@ -168,8 +168,8 @@ main .content .info-content p {
   border: none;
   border-radius: 50%;
   background-color: #da4d4d;
-  animation: moveDot 1s infinite;
-  animation-delay: 300ms;
+  animation: moveDot 0.8s infinite;
+  animation-delay: 250ms;
 }
 .content .circles #yellow {
   width: 1rem;
@@ -178,8 +178,8 @@ main .content .info-content p {
   border: none;
   border-radius: 50%;
   background-color: #e3e65d;
-  animation: moveDot 1s infinite;
-  animation-delay: 150ms;
+  animation: moveDot 0.8s infinite;
+  animation-delay: 100ms;
 }
 .content .circles #green {
   width: 1rem;
@@ -188,8 +188,8 @@ main .content .info-content p {
   border: none;
   border-radius: 50%;
   background-color: #5fe65f;
-  animation: moveDot 1s infinite;
-  animation-delay: 0ms;
+  animation: moveDot 0.8s infinite;
+  animation-delay: -50ms;
 }
 @keyframes moveDot {
   0% {
@@ -203,7 +203,29 @@ main .content .info-content p {
   }
 }
 
-.user-photo img {
+.content .status {
+  display: flex;
+  justify-content: flex-start;
+  height: 0rem;
+  position: relative;
+  top: 3rem;
+}
+.content .status .container-status {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.content .status .container-status #status-ball {
+  margin-left: 2rem;
+  width: 3rem;
+  height: 3rem;
+  position: relative;
+  border: none;
+  border-radius: 50%;
+  background-color: #5fe65f;
+  border: 0.5rem solid #080808;
+}
+.content .user-photo img {
   width: 12rem;
   border-radius: 50%;
 }/*# sourceMappingURL=style.css.map */
