@@ -6,7 +6,7 @@
 
 body, html {
   width: 100%;
-  height: 100vh;
+  height: auto;
   background-color: #080808;
   color: #f3f3f3;
   font-family: "General Sans", sans-serif;
@@ -71,13 +71,15 @@ header .content .btn-lang button:hover {
 }
 
 main {
+  width: 100%;
+  height: 88vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 main .content {
-  padding-top: 1rem;
+  padding-bottom: 1rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -228,4 +230,97 @@ main .content .info-content p {
 .content .user-photo img {
   width: 12rem;
   border-radius: 50%;
+}
+
+#status-ball .tooltip {
+  visibility: hidden;
+  position: relative;
+  left: 2.5rem;
+  bottom: 1rem;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  background-color: #1a1a1a;
+}
+
+#status-ball:hover > .tooltip {
+  visibility: visible;
+  animation: fadein 0.3s;
+}
+@keyframes fadein {
+  from {
+    opacity: 0.5;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.content-coppied {
+  display: flex;
+  justify-content: flex-end;
+}
+.content-coppied .rect-coppied {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem 1rem;
+  margin: 0.5rem 1rem;
+  border: 0.1rem solid #f3f3f3;
+  border-radius: 0.5rem;
+  background-color: #1a1a1a;
+  position: fixed;
+  bottom: 0.5rem;
+  right: 0rem;
+  visibility: hidden;
+}
+.content-coppied .rect-coppied h4 {
+  font-weight: 500;
+}
+.content-coppied #coppied.showCoppied {
+  visibility: visible;
+  animation: moveLeft 0.5s, fadeOut 0.5s 2.5s;
+}
+@keyframes moveLeft {
+  from {
+    right: -15rem;
+    opacity: 0.5;
+  }
+  to {
+    right: 0rem;
+    opacity: 1;
+  }
+}
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+.loading {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  padding-left: 6rem;
+  font-size: 64px;
+  position: fixed;
+  background-color: #080808;
+  z-index: 2;
+  display: none;
+}
+
+#loadingBg.fadeOut {
+  animation: fadeOutBg 0.5s;
+}
+
+@keyframes fadeOutBg {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
 }/*# sourceMappingURL=style.css.map */

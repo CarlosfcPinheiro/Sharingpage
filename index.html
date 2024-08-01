@@ -11,10 +11,13 @@
 </head>
 
 <body>
+    <section class="loading" id="loadingBg">
+        <h1>Welcome.</h1>
+    </section>
     <header>
         <div class="content">
             <div class="btn-lang">
-                <button><i class="fa-solid fa-globe"></i>en</button>
+                <button id="button-lang"><i class="fa-solid fa-globe"></i><span id="current-lang">en</span></button>
             </div>  
         </div>
     </header>
@@ -22,11 +25,13 @@
         <div class="content">
             <div class="status">
                 <div class="container-status">
-                    <div id="status-ball"></div>
+                    <div id="status-ball">
+                        <span class="tooltip" id="status-text">Online</span>
+                    </div>
                 </div>
             </div>
             <div class="user-photo">
-                <img src="assets/gatito.jpg" alt="">
+                <img src="https://api.lanyard.rest/426869130142941194.jpg" alt="" id="user-img">
             </div>
             <div class="info-content">
                 <div class="username">
@@ -41,22 +46,30 @@
             </div>
             <a href="https://www.linkedin.com/in/carlos-pinheiro82/" target="_blank" class="rect-link" id="linkedin">
                 <div class="container-info">
-                    <h3><i class="fa-brands fa-linkedin"></i>Conecte-se comigo!</h3>
+                    <h3><i class="fa-brands fa-linkedin"></i><span id="linkedin-text">Conecte-se comigo!</span></h3>
                 </div>
             </a>
             <a href="https://github.com/CarlosfcPinheiro" target="_blank" class="rect-link" id="github">
                 <div class="container-info">
-                    <h3><i class="fa-brands fa-github"></i>Explore meus projetos</h3>
+                    <h3><i class="fa-brands fa-github"></i><span id="github-text">Explore meus projetos</span></h3>
                 </div>
             </a>
             <a href="assets/curriculo-carlosf.pdf" target="_blank" class="rect-link" id="cv">
                 <div class="container-info">
-                    <h3><i class="fa-solid fa-file"></i>Confira meu CV</h3>
+                    <h3><i class="fa-solid fa-file"></i><span id="cv-text">Confira meu CV</span></h3>
                 </div>
             </a>
         </div>
     </main>
+    <div class="content-coppied">
+        <div class="rect-coppied" id="coppied">
+            <i class="fa-regular fa-circle-check"></i>
+            <h4><span id="coppied-text">Usuário Copiado!</span></h4>
+        </div>
+    </div>
 </body>
     <script src="src/script.js"></script>
+    <script src="src/lang_data.js"></script>
+
     <script src="https://kit.fontawesome.com/c7a7d18c88.js" crossorigin="anonymous"></script>
 </html>
