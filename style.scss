@@ -16,6 +16,7 @@ body, html{
     color: $white-color;
     font-family: 'General Sans', sans-serif;
     
+    transition: 0.3s;
 }
 
 body{
@@ -46,6 +47,58 @@ a{
 }
 
 header{
+    .content{
+        .button-theme{
+            width: 5rem;
+            height: 2.3rem;
+
+            padding: 0.5rem 0.5rem;
+            border: 0.1rem solid $white-color;
+
+            border-radius: 1rem;
+
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            .circle{
+                width: 1.5rem;
+                height: 1.5rem;
+                border-radius: 50%;
+
+                background-color: $white-color;
+                position: relative;
+
+                animation: moveCirclereverse 0.5s;
+            }
+            @keyframes moveCircle{
+                from{
+                    left: 0%;
+                } to{
+                    left: 65%;
+                }
+            }
+            @keyframes moveCirclereverse{
+                from{
+                    left: 65%;
+                } to{
+                    left: 0%;
+                }
+            }
+            
+        }
+
+        #button-theme.active{
+            background-color: $white-color;
+            border-color: $bg-color;
+
+            .circle{
+                background-color: $bg-color;
+            }
+        }
+    }
+}
+
+header{
     width: 100%;
     height: 12vh;
 
@@ -57,8 +110,10 @@ header{
         height: auto;
 
         display: flex;
-        justify-content: flex-end;
+        justify-content: space-between;
         align-items: center;
+
+        gap: 2rem;
         .btn-lang{
             border-radius: 0.6rem;
 
@@ -93,6 +148,10 @@ header{
             }
         }
     }
+}
+
+#bg-circle.active{
+    background-color: #f3f3f3;
 }
 
 main{
@@ -239,15 +298,30 @@ main{
 
         height: 0rem;
         position: relative;
-        top: 3rem;
+        top: 3.2rem;
+        left: 0.2rem;
         .container-status{
             display: flex;
             justify-content: center;
             align-items: center;
+            .bg-circle{
+                background-color: $bg-color;
+                width: 3rem;
+                height: 3rem;
+
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                border-radius: 50%;
+                border: none;
+
+                position: relative;
+                left: 1.5rem;
+                transition: 0.3s;
+            }
             #status-ball{
-                margin-left: 2rem;
-                @include circle-dot(#5fe65f, 3rem, 3rem);
-                border: 0.5rem solid $bg-color;
+                @include circle-dot(#5fe65f, 2rem, 2rem);
             }
 
         }
@@ -366,5 +440,66 @@ main{
         opacity: 1;
     } to{
         opacity: 0;
+    }
+}
+
+// Light theme
+body.active{
+    background-color: $white-color;
+    color: $bg-color;
+    #coppied{
+        color: $white-color;
+    }
+
+    #dot-move{
+        left: 65%;
+        animation: moveCircle 0.5s;
+    }
+
+    .btn-lang button{
+        background-color: $white-color;
+        border-color: $bg-color;
+        color: $bg-color;
+    }
+    .btn-lang button:hover{
+        background-color: $bg-color;
+        color: $white-color;
+    }
+
+    .rect-link{
+        border-color: $bg-color;
+        span, i{
+            color: $bg-color;
+        }
+    }
+
+    #linkedin:hover{
+        span, i{
+            color: $white-color;
+        }
+    }
+
+    #github:hover{
+        span, i{
+            color: $white-color;
+        }
+    }
+
+    #cv:hover{
+        span, i{
+            color: $white-color;
+        }
+    }
+
+    .container-status{
+        #status-ball{
+            #status-text{
+                color: $white-color;
+            }
+        }
+    }
+
+    #real-name{
+        color: #1a1a1a;
     }
 }

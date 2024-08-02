@@ -22,7 +22,7 @@ name_copy.addEventListener('click', () => {
             setTimeout(() => {
                 popUp_coppied.classList.remove('showCoppied');
     
-            }, 3000);
+            }, 2800);
         }
         callRemoveClass();
     }
@@ -31,14 +31,14 @@ name_copy.addEventListener('click', () => {
 
 async function getDatas(){
     const p_fetch = await fetch('https://api.lanyard.rest/v1/users/426869130142941194');
-    console.log(p_fetch);
+    // console.log(p_fetch);
 
     // Taking a response (js object) stream from the promise
     const general_obj = await p_fetch.json();
     // console.log(general_obj);
     // Get the data from the user
     const user_data = general_obj.data;
-    console.log(user_data);
+    // console.log(user_data);
 
     const discord_username = user_data.discord_user.display_name;
     const discord_status = user_data.discord_status;
@@ -71,12 +71,13 @@ var text_elements = [
     coppied_text
 ];
 
+// Change Langauge Event
 btn_lang.addEventListener('click', () => {
     async function changeText(current_arr){
         current_lang.textContent = (current_lang.textContent == 'en'? 'pt-br' : 'en');
         for (let i=0; i<text_elements.length; i++){
             text_elements[i].textContent = current_arr[i];
-            console.log(text_elements[i]);
+            // console.log(text_elements[i]);
         }
     }
     
@@ -85,4 +86,15 @@ btn_lang.addEventListener('click', () => {
     } else{
         changeText(pt_br_Arr);
     }
+});
+
+// Change Theme Event
+const button_theme = document.querySelector('#button-theme');
+const page_theme = document.querySelector('body');
+const bg_circle = document.querySelector('#bg-circle');
+button_theme.addEventListener('click', () => {
+    button_theme.classList.toggle('active');
+    page_theme.classList.toggle('active');
+    bg_circle.classList.toggle('active');
+    
 });

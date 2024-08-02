@@ -16,17 +16,22 @@
     </section>
     <header>
         <div class="content">
+            <div class="button-theme" id="button-theme">
+                <div class="circle" id="dot-move"></div>
+            </div>  
             <div class="btn-lang">
                 <button id="button-lang"><i class="fa-solid fa-globe"></i><span id="current-lang">en</span></button>
-            </div>  
+            </div>
         </div>
     </header>
     <main>
         <div class="content">
             <div class="status">
                 <div class="container-status">
-                    <div id="status-ball">
-                        <span class="tooltip" id="status-text">Online</span>
+                    <div class="bg-circle" id="bg-circle">
+                        <div id="status-ball" class="status-ball">
+                            <span class="tooltip" id="status-text">Online</span>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -37,7 +42,7 @@
                 <div class="username">
                     <h2 id="username-copy">Wirrt</h2>
                 </div>
-                <p>Carlos Pinheiro</p>
+                <p id="real-name">Carlos Pinheiro</p>
             </div>
             <div class="circles">
                 <div class="circle" id="red"></div>
@@ -68,8 +73,8 @@
         </div>
     </div>
 </body>
-    <script src="src/script.js"></script>
-    <script src="src/lang_data.js"></script>
+    <script src="src/script.js" defer></script>
+    <script src="src/lang_data.js" defer></script>
 
     <script src="https://kit.fontawesome.com/c7a7d18c88.js" crossorigin="anonymous"></script>
 </html>
