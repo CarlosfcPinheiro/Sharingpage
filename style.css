@@ -30,6 +30,10 @@ a {
   text-decoration: none;
 }
 
+header .content {
+  position: fixed;
+}
+
 header .content .button-theme {
   width: 5rem;
   height: 2.3rem;
@@ -414,7 +418,7 @@ img, p, h4 {
 }
 
 #loadingBg.fadeOut {
-  animation: fadeOutBg 0.5s forwards;
+  animation: fadeOutBg 0.8s forwards;
 }
 
 @keyframes fadeOutBg {
