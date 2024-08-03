@@ -55,6 +55,7 @@ header .content .button-theme .circle {
   background-color: #f3f3f3;
   position: relative;
   animation: moveCirclereverse 0.5s;
+  z-index: 2;
 }
 @keyframes moveCircle {
   from {
@@ -81,6 +82,24 @@ header .content #button-theme.active {
 }
 header .content #button-theme.active .circle {
   background-color: #080808;
+}
+header .content .background-sm {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+}
+header .content .background-sm i {
+  position: absolute;
+  top: 0.8rem;
+  left: 0.7rem;
+  font-size: 20px;
+  z-index: 1;
+}
+header .content .background-sm #sun {
+  left: 3.2rem;
+}
+header .content .button-theme + .background-sm {
+  background-color: rgba(8, 8, 8, 0);
 }
 
 header {

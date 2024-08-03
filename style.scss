@@ -78,6 +78,7 @@ header{
                 position: relative;
 
                 animation: moveCirclereverse 0.5s;
+                z-index: 2;
             }
             @keyframes moveCircle{
                 from{
@@ -107,6 +108,29 @@ header{
             .circle{
                 background-color: $bg-color;
             }
+        }
+        
+        .background-sm{
+            display: flex;
+            flex-direction: row;
+            gap: 1rem;
+
+            i{
+                position: absolute;
+                top: 0.8rem;
+                left: 0.7rem;
+
+                font-size: 20px;
+                z-index: 1;
+            }
+
+            #sun{
+                left: 3.2rem;
+            }
+        }
+
+        .button-theme + .background-sm{
+            background-color: #08080800;
         }
     }
 }
