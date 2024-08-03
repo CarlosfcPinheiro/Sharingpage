@@ -64,6 +64,9 @@ header .content .button-theme .circle {
     left: 0%;
   }
 }
+header .content .button-theme:hover {
+  cursor: pointer;
+}
 header .content #button-theme.active {
   background-color: #f3f3f3;
   border-color: #080808;
@@ -359,9 +362,18 @@ main .content .info-content p {
   }
 }
 
+img, p, h4 {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}
+
 .loading {
   width: 100%;
   height: 100vh;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
   display: flex;
   align-items: center;
   padding-left: 6rem;
@@ -369,11 +381,40 @@ main .content .info-content p {
   position: fixed;
   background-color: #080808;
   z-index: 2;
-  display: none;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 1rem;
+}
+.loading .container-text {
+  display: flex;
+  flex-direction: row;
+}
+.loading .bar-loading {
+  width: 0%;
+  height: 0.2rem;
+  background-color: #f3f3f3;
+}
+.loading #bar-loading.complete {
+  animation: shadow_bar 0.2s;
+}
+@keyframes shadow_bar {
+  from {
+    box-shadow: 0rem 0rem 0rem #f3f3f3, 0rem 0rem 0rem #f3f3f3;
+  }
+  to {
+    box-shadow: 0rem 0.1rem 0.2rem #f3f3f3, 0rem -0.1rem 0.2rem #f3f3f3;
+  }
+}
+.loading .bar-base {
+  width: 80%;
+  height: 0.2rem;
+  background-color: #1a1a1a;
 }
 
 #loadingBg.fadeOut {
-  animation: fadeOutBg 0.5s;
+  animation: fadeOutBg 0.5s forwards;
 }
 
 @keyframes fadeOutBg {
@@ -382,6 +423,7 @@ main .content .info-content p {
   }
   to {
     opacity: 0;
+    visibility: hidden;
   }
 }
 body.active {

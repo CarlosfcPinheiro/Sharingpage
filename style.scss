@@ -87,6 +87,10 @@ header{
             
         }
 
+        .button-theme:hover{
+            cursor: pointer;
+        }
+
         #button-theme.active{
             background-color: $white-color;
             border-color: $bg-color;
@@ -414,9 +418,15 @@ main{
     }
 }
 
+img, p, h4{
+    user-select: none;
+}
+
 .loading{
     width: 100%;
     height: 100vh;
+
+    user-select: none;
 
     display: flex;
     align-items: center;
@@ -428,11 +438,46 @@ main{
 
     background-color: #080808;
     z-index: 2;
-    display: none;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+
+    gap: 1rem;
+
+    .container-text{
+        display: flex;
+        flex-direction: row;
+    }
+
+    .bar-loading{
+        width: 0%;
+        height: 0.2rem;
+        background-color: $white-color;  
+    }
+
+    #bar-loading.complete{
+        animation: shadow_bar 0.2s;
+    }
+    @keyframes shadow_bar{
+        from{
+            box-shadow: 0rem 0rem 0rem $white-color, 0rem -0rem 0rem $white-color;
+        } to{
+            box-shadow: 0rem 0.1rem 0.2rem $white-color, 0rem -0.1rem 0.2rem $white-color;
+        }
+    }
+
+    .bar-base{
+        width: 80%;
+        height: 0.2rem;
+        background-color: $gray-color;
+    }
+
 }
 
 #loadingBg.fadeOut{
-    animation: fadeOutBg 0.5s;
+    animation: fadeOutBg 0.5s forwards;
 }
 
 @keyframes fadeOutBg{
@@ -440,6 +485,7 @@ main{
         opacity: 1;
     } to{
         opacity: 0;
+        visibility: hidden;
     }
 }
 
