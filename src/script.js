@@ -4,6 +4,7 @@ const popUp_coppied = document.querySelector('#coppied');
 const status_el = document.querySelector('#status-text');
 const status_ball = document.querySelector('#status-ball');
 const btn_lang = document.querySelector('#button-lang');
+const user_photo = document.querySelector('#user-img');
 
 // Setting collors
 const collors_arr = [
@@ -42,9 +43,11 @@ async function getDatas(){
 
     const discord_username = user_data.discord_user.display_name;
     const discord_status = user_data.discord_status;
+    const user_id = user_data.discord_user.id;
 
     name_copy.textContent = discord_username;
     status_el.textContent = (discord_status == 'dnd'? 'occuped' : discord_status);
+    user_photo.src = `https://api.lanyard.rest/${user_id}.jpg`;
 
     for (let i=0; i<4; i++){
         if (discord_status == collors_arr[i][0]){

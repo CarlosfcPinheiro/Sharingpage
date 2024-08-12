@@ -39,7 +39,7 @@ const constructor = async(text, loopNum) => {
             await sleep(20);
             text_glitch.textContent = randomChar;
 
-            console.log(count += 1);
+            // console.log(count += 1);
             // Add bar percentage
             num_bar += 0.834;
             num_bar_string = num_bar.toString() + '%';
