@@ -1,10 +1,10 @@
 # Sharing Page
-Uma página pessoal que busca compartilhar informações e links relaciodados ao meu perfil. Consumindo a [API lanyard](https://github.com/Phineas/lanyard) para mostrar informações de status do discord para maior interatividade.
+Uma página pessoal que busca compartilhar informações e links relaciodados ao meu perfil, de forma semelhante ao Linktree. Consumindo a [API lanyard](https://github.com/Phineas/lanyard) para intereção com status da aplicação do Discord.
 
-## Tecnlogias utilizadas
+## ⚙ Tecnlogias utilizadas
 - HTML5
-- CSS3/SCSS
-- Javascript / Fetch API
+- CSS3 / SCSS
+- Javascript
 
-## Link do Projeto
+## 🔗 Link do Projeto
 http://carlos-p.tech/
